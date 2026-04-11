@@ -2,11 +2,12 @@
 
 Change history:
 
-| Team member | Task | Working time |
-| --- | --- | --- |
-| Thanh Ha Nguyen | Create an ER diagram draft | 2 hours |
-| Thanh Ha Nguyen | Revise the ER diagram, add the ERD-like class diagram and the logical design | 6 hours |
-| ... | ... | ... |
+| Team member     | Task                                                                         | Working time |
+| --------------- | ---------------------------------------------------------------------------- | ------------ |
+| Thanh Ha Nguyen | Create an ER diagram draft                                                   | 2 hours      |
+| Thanh Ha Nguyen | Revise the ER diagram, add the ERD-like class diagram and the logical design | 5 hours      |
+| Thanh Ha Nguyen | Add entity type definitions                                                  | 2 hours      |
+| ...             | ...                                                                          | ...          |
 
 ## Conceptual Design (ER Diagram)
 
@@ -50,6 +51,59 @@ erDiagram
     Event ||--|{ Booking : "has"
     Venue ||--|{ Event : "holds"
 ```
+
+### ENTITY TYPE DESCRIPTIONS
+
+| **ENTITY TYPE**     | **Description**                                 | **Synonyms, aliases**      | **Occurrence**                                         |
+| :------------------ | :---------------------------------------------- | :------------------------- | :----------------------------------------------------- |
+| Client              | An individual making a booking.                 | Customer, User             | Multiple clients expected.                             |
+| Venue               | A physical location where events are hosted.    | Location, Hall             | Limited venues (e.g., 3 initially, potential for more).|
+| Artist              | A performer or group scheduled to perform.      | Performer, Group           | Multiple artists may perform.                          |
+| SpecificRequest     | Special requirements for an artist for an event.| Artist Requirement, Rider  | An artist may have zero or more requests.              |
+| Event               | A scheduled cultural performance or activity.   | Performance, Show, Activity| Multiple events are scheduled.                         |
+| Booking             | A client's reservation of tickets for an event. | Reservation, Ticket Order  | Multiple bookings per event, per client.               |
+
+### ATTRIBUTE TYPE DESCRIPTIONS
+
+#### Client
+| **Attribute type** | **Description**                                | **Data type** | **Value required** | **Identity attribute or part of it** | **Special domain** |
+| ------------------ | ---------------------------------------------- | ------------- | ------------------ | ------------------------------------ | ------------------ |
+| phone_number       | Client's contact phone number                  | Text          | Yes                | -                                    | Valid phone format |
+
+#### Venue
+| **Attribute type** | **Description**                                | **Data type** | **Value required** | **Identity attribute or part of it** | **Special domain** |
+| ------------------ | ---------------------------------------------- | ------------- | ------------------ | ------------------------------------ | ------------------ |
+| venue_name         | Name of the venue                              | Text          | Yes                | -                                    | -                  |
+| address            | Physical address of the venue                  | Text          | Yes                | -                                    | -                  |
+| capacity           | Maximum number of people the venue can hold    | Integer       | Yes                | -                                    | e.g., 60, 250, 600 |
+
+#### Artist
+| **Attribute type** | **Description**                                | **Data type** | **Value required** | **Identity attribute or part of it** | **Special domain** |
+| ------------------ | ---------------------------------------------- | ------------- | ------------------ | ------------------------------------ | ------------------ |
+| artist_name        | Name of the artist or group                    | Text          | Yes                | -                                    | -                  |
+| contact_info       | Contact details for the artist                 | Text          | -                  | -                                    | -                  |
+
+#### SpecificRequest
+| **Attribute type**  | **Description**                                | **Data type** | **Value required** | **Identity attribute or part of it** | **Special domain** |
+| ------------------- | ---------------------------------------------- | ------------- | ------------------ | ------------------------------------ | ------------------ |
+| request_description | Detailed description of the requirement        | Text          | Yes                | -                                    | -                  |
+
+#### Event
+| **Attribute type** | **Description**                                | **Data type** | **Value required** | **Identity attribute or part of it** | **Special domain**             |
+| ------------------ | ---------------------------------------------- | ------------- | ------------------ | ------------------------------------ | ------------------------------ |
+| event_name         | Name of the event                              | Text          | Yes                | -                                    | -                              |
+| event_date         | Date on which the event takes place            | Date          | Yes                | -                                    | -                              |
+| event_time         | Time on which the event starts                 | Time          | Yes                | -                                    | -                              |
+| ticket_price       | The price of a single ticket for this event    | Decimal       | Yes                | -                                    | Non-negative                   |
+| status             | Current status of the event                    | Text          | Yes                | -                                    | e.g., 'scheduled', 'cancelled' |
+
+#### Booking
+| **Attribute type** | **Description**                                    | **Data type** | **Value required** | **Identity attribute or part of it** | **Special domain**                  |
+| ------------------ | -------------------------------------------------- | ------------- | ------------------ | ------------------------------------ | ----------------------------------- |
+| booking_number     | Unique number to identify the booking for purchase | Text          | Yes                | -                                    | -                                   |
+| booking_date       | Date on which the booking was made                 | Date          | Yes                | -                                    | -                                   |
+| number_of_tickets  | Quantity of tickets reserved                       | Integer       | Yes                | -                                    | Positive integer                    |
+| status             | Current status of the booking                      | Text          | Yes                | -                                    | e.g., 'booked', 'sold', 'cancelled' |
 
 ## Conceptual Design (Class Diagram)
 
