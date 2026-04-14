@@ -7,7 +7,8 @@ Change history:
 | Thanh Ha Nguyen | Create an ER diagram draft                                                   | 2 hours      |
 | Thanh Ha Nguyen | Revise the ER diagram, add the ERD-like class diagram and the logical design | 5 hours      |
 | Thanh Ha Nguyen | Add entity type definitions                                                  | 2 hours      |
-| ...             | ...                                                                          | ...          |
+| Ngoc Nguyen     | Review the conceptual design, ER diagram                                     | 2 hours      |
+| Thao Dinh       | Review the logical design                                                    | 2 hours      |
 
 ## Conceptual Design (ER Diagram)
 
