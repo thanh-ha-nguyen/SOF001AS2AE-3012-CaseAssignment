@@ -34,8 +34,6 @@ CREATE TABLE Event (
   CONSTRAINT Event_Venue FOREIGN KEY (venue_number) REFERENCES Venue (venue_number)
 );
 
-CREATE INDEX IX_venue ON Event(event_number);
-
 CREATE TABLE Booking (
   booking_number INT primary key, 
   booking_date date NOT NULL, 
@@ -46,7 +44,3 @@ CREATE TABLE Booking (
   CONSTRAINT Booking_Client FOREIGN KEY (client_number) REFERENCES Client(client_number),
   CONSTRAINT Booking_Event FOREIGN KEY (event_number) REFERENCES Event(event_number)
 );
-
-CREATE INDEX IX_client_number ON Booking(client_number);
-CREATE INDEX IX_event_number ON Booking(event_number);
-
