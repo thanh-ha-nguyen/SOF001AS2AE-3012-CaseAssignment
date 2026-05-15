@@ -237,7 +237,3 @@ erDiagram
     int event_number FK
   }
 ```
-  SQL create table script: https://github.com/thanh-ha-nguyen/SOF001AS2AE-3012-CaseAssignment/blob/main/create_table.sql
-  SQL create index script: https://github.com/thanh-ha-nguyen/SOF001AS2AE-3012-CaseAssignment/blob/main/create_index.sql
-  SQL insert test data script: https://github.com/thanh-ha-nguyen/SOF001AS2AE-3012-CaseAssignment/blob/main/insert_data.sql
-  SQL verify operation script: https://github.com/thanh-ha-nguyen/SOF001AS2AE-3012-CaseAssignment/blob/main/verify_operations.sql
