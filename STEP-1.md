@@ -166,4 +166,7 @@ Event (<ins>event_number</ins>, event_name, event_date, event_time, ticket_price
 Booking (<ins>booking_number</ins>, booking_date, number_of_tickets, status, client_number, event_number)
     FK (client_number) REFERENCES Client (client_number)
     FK (event_number) REFERENCES Event (event_number)
+Artist_Event (<ins>artist_number</ins>, <ins>event_number</ins>)
+    FK (artist_number) REFERENCES Artist (artist_number)
+    FK (event_number) REFERENCES Event (event_number)
 </pre>
