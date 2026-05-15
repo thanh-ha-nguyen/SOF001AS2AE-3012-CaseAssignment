@@ -176,6 +176,7 @@ Artist_Event (<ins>artist_number</ins>, <ins>event_number</ins>)
 
 # Step 2: Physical design, implementation in SQL Server, and testing
 ## database diagram
+```mermaid
 ---
 config:
   layout: elk
@@ -235,6 +236,7 @@ erDiagram
     int client_number FK
     int event_number FK
   }
+```
   SQL create table script: https://github.com/thanh-ha-nguyen/SOF001AS2AE-3012-CaseAssignment/blob/main/create_table.sql
   SQL create index script: https://github.com/thanh-ha-nguyen/SOF001AS2AE-3012-CaseAssignment/blob/main/create_index.sql
   SQL insert test data script: https://github.com/thanh-ha-nguyen/SOF001AS2AE-3012-CaseAssignment/blob/main/insert_data.sql
