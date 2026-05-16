@@ -1,0 +1,38 @@
+---
+title: Greenwood Cultural Association (ERD)
+---
+erDiagram
+    Client {
+        string phone_number
+    }
+    Venue {
+        string venue_name
+        string address
+        int capacity
+    }
+    Artist {
+        string artist_name
+        string contact_info
+    }
+    SpecificRequest {
+        string request_description
+    }
+    Event {
+        string event_name
+        date event_date
+        time event_time
+        decimal ticket_price
+        string status
+    }
+    Booking {
+        string booking_number
+        date booking_date
+        int number_of_tickets
+        string status
+    }
+
+    Client ||--|{ Booking : "creates"
+    Artist ||--|{ SpecificRequest : "has"
+    Artist }o--o{ Event : "performs"
+    Event ||--|{ Booking : "has"
+    Venue ||--|{ Event : "holds"

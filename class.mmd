@@ -1,0 +1,38 @@
+---
+title: Greenwood Cultural Association (Class Diagram))
+---
+classDiagram
+    class Client {
+        phone_number
+    }
+    class Venue {
+        venue_name
+        address
+        capacity
+    }
+    class Artist {
+        artist_name
+        contact_info
+    }
+    class SpecificRequest {
+        request_description
+    }
+    class Event {
+        event_name
+        event_date
+        event_time
+        ticket_price
+        status
+    }
+    class Booking {
+        booking_number UK
+        booking_date
+        number_of_tickets
+        status
+    }
+
+    Client "1..1" -- "0..*" Booking : creates ->
+    Artist "1..1" -- "0..*" SpecificRequest : has ->
+    Artist "1..*" -- "0..*" Event : performs ->
+    Event "1..1" -- "0..*" Booking : has ->
+    Venue "1..1" -- "0..*" Event : holds ->
