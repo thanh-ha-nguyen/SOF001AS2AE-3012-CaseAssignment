@@ -25,6 +25,6 @@ The database system developed for the Greenwood Cultural Association successfull
 
 | Team member | Task | Working time |
 |-------------|------|--------------|
-| Thanh Ha Nguyen | Conceptual & logical design, ERD, Entity definitions | 9 hours |
-| Ngoc Nguyen | Review design, ERD, Implementation, Testing | 8 hours |
-| Thao Dinh | Review logical design, SQL scripts, Testing, Report | 8 hours |
+| Thanh Ha Nguyen | Conceptual & logical design, ERD, Entity definitions | 12 hours |
+| Ngoc Nguyen | Review design, ERD, Implementation, Testing | 10 hours |
+| Thao Dinh | Review logical design, SQL scripts, Testing, Report | 7 hours |
