@@ -9,9 +9,6 @@ Change history:
 | Thanh Ha Nguyen | Add entity type definitions                                                  | 2 hours      |
 | Ngoc Nguyen     | Review and update the conceptual design, ER diagram                          | 5 hours      |
 | Thao Dinh       | Review and update the logical design                                         | 5 hours      |
-| Ngoc Nguyen     | Add create table, create index, insert data SQL script                       | 3 hours      |
-| Ngoc Nguyen     | Add SQL diagram                                                              | 1 hours      |
-| Thanh Ha Nguyen | Add SQL script to verify operation question\                                 | 3 hours      |
 
 ## Conceptual Design (ER Diagram)
 
@@ -175,65 +172,13 @@ Artist_Event (<ins>artist_number</ins>, <ins>event_number</ins>)
 </pre>
 
 # Step 2: Physical design, implementation in SQL Server, and testing
-## database diagram
-```mermaid
----
-config:
-  layout: elk
----
-erDiagram
-  CLIENT ||--o{ BOOKING : makes
-  VENUE ||--o{ EVENT : hosts
-  ARTIST ||--o{ SPECIFICREQUEST : has
-  ARTIST }o--|| ARTIST_EVENT : participates
-  EVENT }o--|| ARTIST_EVENT : features
-  EVENT ||--o{ BOOKING : receives
+Please refer to the other database diagram file and SQL files for create table, create index, insert data and verify operation question.
 
-  CLIENT {
-    int client_number PK
-    string phone_number
-  }
+Change history:
 
-  VENUE {
-    int venue_number PK
-    string venue_name
-    string address
-    int capacity
-  }
-
-  ARTIST {
-    int artist_number PK
-    string artist_name
-    string contact_info
-  }
-
-  SPECIFICREQUEST {
-    int request_number PK
-    string request_description
-    int artist_number FK
-  }
-
-  EVENT {
-    int event_number PK
-    string event_name
-    date event_date
-    time event_time
-    decimal ticket_price
-    string status
-    int venue_number FK
-  }
-
-  ARTIST_EVENT {
-    int artist_number FK
-    int event_number FK
-  }
-
-  BOOKING {
-    int booking_number PK
-    date booking_date
-    int number_of_tickets
-    string status
-    int client_number FK
-    int event_number FK
-  }
-```
+| Team member     | Task                                                                         | Working time |
+| --------------- | ---------------------------------------------------------------------------- | ------------ |
+| Ngoc Nguyen     | Add SQL database diagram                                                     | 2 hours      |
+| Thanh Ha Nguyen | Add SQL script to verify operation question\                                 | 3 hours      |
+| Ngoc Nguyen     | Add create table, create index, insert data SQL script                       | 3 hours      |
+| Thao Dinh       | Review, update SQL database diagram, SQL script                              | 2 hours      |
